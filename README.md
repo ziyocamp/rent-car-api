@@ -73,6 +73,7 @@ Key Features:
 ### Authentication
 
 * `POST /api/auth/register` → Register new user
+* `POST /api/auth/vefify` → Verification user
 * `POST /api/auth/login` → User login (JWT token)
 * `GET /api/auth/me` → Get logged-in user info
 
