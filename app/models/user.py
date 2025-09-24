@@ -1,5 +1,7 @@
 from enum import Enum
+
 from sqlalchemy import Column, Integer, String, Boolean, Enum as SQLEnum
+
 from app.db.database import Base
 
 
@@ -13,7 +15,7 @@ class User(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     email = Column(String, unique=True, index=True, nullable=False)
-    password_hash = Column(String, nullable=False)
+    hash_password = Column(String, nullable=False)
     phone = Column(String)
     name = Column(String)
     is_verified = Column(Boolean, default=False)
