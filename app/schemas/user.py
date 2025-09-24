@@ -28,3 +28,7 @@ class UserResponse(BaseModel):
 class VerificationCode(BaseModel):
     email: Annotated[str, EmailStr]
     code: int
+
+class UserLogin(BaseModel):
+    email: Annotated[str, EmailStr]
+    password: Annotated[str, Field(min_length=8)]
