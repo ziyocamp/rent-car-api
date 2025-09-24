@@ -20,6 +20,7 @@ class User(Base):
     name = Column(String)
     is_verified = Column(Boolean, default=False)
     role = Column(SQLEnum(UserRoles), default=UserRoles.user)
+    verification_code = Column(Integer)
 
     def __repr__(self) -> str:
         return f"User(id={self.id}, email={self.email}, name={self.name}, phone={self.phone})"

@@ -23,3 +23,8 @@ class UserResponse(BaseModel):
     phone: Annotated[str, Field(min_length=9, max_length=15)]
     role: Annotated[str, UserRoles]
     is_verified: bool
+
+
+class VerificationCode(BaseModel):
+    email: Annotated[str, EmailStr]
+    code: int
