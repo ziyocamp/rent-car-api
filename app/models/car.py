@@ -33,6 +33,7 @@ class Car(Base):
     price = Column(Float, nullable=False)
     engine_type = Column(SQLEnum(EngineType), nullable=False)
     doors = Column(Integer, nullable=False)
+    seats = Column(Integer, nullable=False)
     fuel_type = Column(SQLEnum(FuelType), nullable=False)
     air_condition = Column(Boolean, default=True)
     shape_type = Column(SQLEnum(ShapeType), nullable=False)

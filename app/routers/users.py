@@ -12,7 +12,7 @@ from app.utils.password import vefify_password
 from app.models.user import User
 from app.core.security import generate_token
 
-router = APIRouter(prefix="/users", tags=["users"])
+router = APIRouter(prefix="/users", tags=["User Endpoints"])
 
 
 @router.post("/", response_model=UserResponse)
