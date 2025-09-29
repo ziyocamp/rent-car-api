@@ -5,23 +5,23 @@ from pydantic import BaseModel, PositiveFloat, PositiveInt, HttpUrl
 
 
 class EngineType(Enum):
-    MECHANIC = "mechanic"
-    AUTOMAT = "automat"
+    MECHANIC = "MECHANIC"
+    AUTOMAT = "AUTOMAT"
 
 
 class FuelType(Enum):
-    PETROL = "petrol"
-    DIESEL = "diesel"
-    ELECTRIC = "electric"
-    HYBRID = "hybrid"
+    PETROL = "PETROL"
+    DIESEL = "DIESEL"
+    ELECTRIC = "ELECTRIC"
+    HYBRID = "HYBRID"
 
 
 class ShapeType(Enum):
-    SEDAN = "sedan"
-    SUV = "suv"
-    HATCHBACK = "hatchback"
-    COUPE = "coupe"
-    PICKUP = "pickup"
+    SEDAN = "SEDAN"
+    SUV = "SUV"
+    HATCHBACK = "HATCHBACK"
+    COUPE = "COUPE"
+    PICKUP = "PICKUP"
 
 
 class CarCreate(BaseModel):
