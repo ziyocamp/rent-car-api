@@ -1,6 +1,7 @@
 from enum import Enum
 
 from sqlalchemy import Column, Integer, String, Boolean, Enum as SQLEnum
+from sqlalchemy.orm import relationship
 
 from app.db.database import Base
 
@@ -21,6 +22,8 @@ class User(Base):
     is_verified = Column(Boolean, default=False)
     role = Column(SQLEnum(UserRoles), default=UserRoles.user)
     verification_code = Column(Integer)
+
+    orders = relationship("Order", back_populates="user")
 
     def __repr__(self) -> str:
         return f"User(id={self.id}, email={self.email}, name={self.name}, phone={self.phone})"

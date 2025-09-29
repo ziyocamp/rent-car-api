@@ -24,6 +24,9 @@ class UserResponse(BaseModel):
     role: Annotated[str, UserRoles]
     is_verified: bool
 
+    class Config:
+        from_attributes = True
+
 
 class VerificationCode(BaseModel):
     email: Annotated[str, EmailStr]

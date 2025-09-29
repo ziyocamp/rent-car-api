@@ -43,6 +43,7 @@ class Car(Base):
     # relationships
     images = relationship("Image", back_populates="car", cascade="all, delete")
     equipments = relationship("Equipment", back_populates="car", cascade="all, delete")
+    orders = relationship("Order", back_populates="car")
     
 
 class Image(Base):
