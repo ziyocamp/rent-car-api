@@ -8,7 +8,6 @@ from app.schemas.user import UserResponse
 
 class OrderCreate(BaseModel):
     car_id: int
-    user_id: int
     order_date: date
     
 

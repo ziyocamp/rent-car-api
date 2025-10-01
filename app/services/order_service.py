@@ -10,9 +10,9 @@ from app.models.car import Car
 from app.schemas.order import OrderCreate, OrderResponse
 
 
-def create_order(db: Session, order_data: OrderCreate):
+def create_order(db: Session, order_data: OrderCreate, user_id: int):
 
-    user = db.query(User).filter_by(id=order_data.user_id).first()
+    user = db.query(User).filter_by(id=user_id).first()
 
     if user is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Bunday user mavjud emas.")
@@ -23,8 +23,8 @@ def create_order(db: Session, order_data: OrderCreate):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Bunday car mavjud emas.")
         
     order = Order(
-        user_id = order_data.user_id,
-        car_id = order_data.car_id,
+        user_id = user.id,
+        car_id = car.id,
         order_date = order_data.order_date
     )
 
