@@ -5,6 +5,7 @@ from app.db import initial_db
 from app.routers.users import router as user_router
 from app.routers.cars import router as car_router
 from app.routers.orders import router as order_router
+from app.internal.admin import router as admin_router
 
 
 app = FastAPI(
@@ -27,3 +28,4 @@ app.add_middleware(
 app.include_router(user_router)
 app.include_router(car_router)
 app.include_router(order_router)
+app.include_router(admin_router)
