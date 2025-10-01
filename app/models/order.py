@@ -12,5 +12,5 @@ class Order(Base):
     order_date = Column(Date)
     status = Column(String) # "panding", "cancelled", "active", "completed"
 
-    car = relationship("Car", back_populates="orders")
-    user = relationship("User", back_populates="orders")
+    car = relationship("Car", back_populates="orders", cascade='all, delete')
+    user = relationship("User", back_populates="orders", cascade='all, delete')

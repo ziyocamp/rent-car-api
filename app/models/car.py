@@ -43,7 +43,7 @@ class Car(Base):
     # relationships
     images = relationship("Image", back_populates="car", cascade="all, delete")
     equipments = relationship("Equipment", back_populates="car", cascade="all, delete")
-    orders = relationship("Order", back_populates="car")
+    orders = relationship("Order", back_populates="car", cascade='all, delete')
     
 
 class Image(Base):
@@ -53,7 +53,7 @@ class Image(Base):
     url = Column(String, nullable=False)
 
     car_id = Column(Integer, ForeignKey("cars.id", ondelete="CASCADE"))
-    car = relationship("Car", back_populates="images")
+    car = relationship("Car", back_populates="images", cascade='all, delete')
 
 
 class Equipment(Base):
@@ -63,5 +63,5 @@ class Equipment(Base):
     name = Column(String, nullable=False)
 
     car_id = Column(Integer, ForeignKey("cars.id", ondelete="CASCADE"))
-    car = relationship("Car", back_populates="equipments")
+    car = relationship("Car", back_populates="equipments", cascade='all, delete')
 

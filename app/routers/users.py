@@ -15,7 +15,7 @@ from app.core.security import generate_token
 router = APIRouter(prefix="/users", tags=["User Endpoints"])
 
 
-@router.post("/", response_model=UserResponse)
+@router.post("/register", response_model=UserResponse)
 async def create_new_user(user: UserCreate, db: Session = Depends(get_db)):
     new_user = create_user(db, user)
 

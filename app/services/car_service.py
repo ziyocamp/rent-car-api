@@ -58,6 +58,7 @@ def delete_car(db: Session, car_id: int) -> Car | None:
     if car:
         db.delete(car)
         db.commit()
+        return {"msg": "o'chirildi"}
     
-    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Car o'chirildi.")
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Car topilmadi.")
 
